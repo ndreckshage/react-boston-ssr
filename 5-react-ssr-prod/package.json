@@ -1,0 +1,8 @@
+{
+  "main": "server.js",
+  "dependencies": {
+    "express": "^4.11.2",
+    "node-jsx": "^0.12.4",
+    "react": "^0.12.2"
+  }
+}

@@ -1,0 +1,10 @@
+<div class="user-{{_id}}" style="border:1px solid #eee;padding:5px;margin:5px;width:300px;display:inline-block">
+  <img src="{{picture}}" />
+  <p>Name: {{name}}</p>
+  <p>Age: {{age}}</p>
+  <p>Net Worth: {{balance}}</p>
+  {{#tags}}
+    {{> tag}}
+  {{/tags}}
+  {{> friends}}
+</div>

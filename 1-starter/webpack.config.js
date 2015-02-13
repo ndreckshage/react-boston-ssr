@@ -11,6 +11,10 @@ module.exports = {
     filename: 'client.js',
     publicPath: '/build/'
   },
+  externals: [{
+    // see lib/react -- skipping this will make it so webpack doesnt bring in an extra, unnecessary react version
+    "react/dist/react.min": true
+  }],
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoErrorsPlugin()

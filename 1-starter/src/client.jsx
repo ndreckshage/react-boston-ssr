@@ -1,7 +1,7 @@
 'use strict';
 
 var DomReady = require('domready');
-var React = require('react');
+var React = require('lib/react');
 var Router = require('react-router');
 var Routes = require('lib/routes');
 var resolveRoute = require('lib/resolve-route');
@@ -15,7 +15,8 @@ var context = {};
  * @param {object} resolved data
  */
  function render(Handler, data) {
-   React.render(<Handler data={data} />, document.getElementById('react'));
+   var a = <Handler data={data} />;
+   React.render(a, document.getElementById('react'));
  }
 
 /**
@@ -37,5 +38,6 @@ function init() {
     window.APPLICATION.INITIALIZED = true;
   }
 }
+
 window.APPLICATION.INIT = init;
 DomReady(init);

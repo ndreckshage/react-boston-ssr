@@ -1,0 +1,7 @@
+{
+  "main": "server.js",
+  "dependencies": {
+    "express": "^4.11.2",
+    "hogan.js": "^3.0.2"
+  }
+}

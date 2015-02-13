@@ -1,14 +1,14 @@
 'use strict';
 
-var React /* js boston! */ = require('react');
 var express = require('express');
-var request = require('request');
 var app = express();
 
 // require 'component/x' vs. './../component/x'
 const IS_DEV = process.env.NODE_ENV !== 'production';
 process.env.NODE_PATH = IS_DEV ? `${__dirname}/src` : `${__dirname}/build`;
 require('module').Module._initPaths();
+
+var React /* js boston! */ = require('lib/react');
 
 // WEBPACK
 // -------
@@ -18,7 +18,7 @@ require('module').Module._initPaths();
 // - serve assets from webpack
 // - react hot loader
 // PROD
-// - precompile jsx
+// - precompile jsx (jsx --extension jsx src/ build/)
 // - serve from /build
 // - serve assets from cdn
 if (IS_DEV) {
@@ -33,6 +33,8 @@ if (IS_DEV) {
   }).listen(3001, 'localhost', function() {
     console.log('webpack server at http://localhost:3001');
   });
+
+  var request = require('request');
   app.use('/build/*', function(req, res) {
     req.pipe(request('http://localhost:3001'.concat(req.baseUrl, req.url))).pipe(res);
   });
