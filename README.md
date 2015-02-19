@@ -21,3 +21,9 @@ Server side rendering using a few best practices.
 ---
 
 Everything runs on localhost:3000 w/ npm install && node server
+
+# Run your own benchmarks!
+
+cd 5-react-ssr-prod
+NODE_ENV=production iojs server
+ab -n 100 http://localhost:3000/
