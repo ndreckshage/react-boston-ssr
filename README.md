@@ -24,8 +24,10 @@ Everything runs on localhost:3000 w/ npm install && node server
 
 # Run your own benchmarks!
 
+```
 cd 5-react-ssr-prod
-
 NODE_ENV=production iojs server
-
 ab -n 100 http://localhost:3000/
+```
+
+reduce the json payload size if you think a list of a 1000 is ridiculous
